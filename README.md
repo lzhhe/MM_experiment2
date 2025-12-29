@@ -35,6 +35,9 @@
 │          └─5ca5edf5bd017b9919c05d08aebef5e4c7ac3bac
 ```
 - 需要手动创建一个models文件夹，然后将下载的压缩包解压到models当中，最终结构如上
+
+- 为了保证与演示视频一致，这里上传了演示视频操作后的数据库和分类，供参考和复现
+- 如果您希望重新创建一个数据库和papers分类，删除掉预先上传的outputs文件夹和papers文件夹即可，他们会在第一次使用时候自动创建
 ## 详细的使用说明（包含具体的命令行示例）
 有演示视频可以观看：链接如下：
 `https://drive.google.com/file/d/1K3qZ-inGlBO65LNwdV8FQTMBMPHsEMos/view?usp=sharing`
@@ -74,7 +77,7 @@
   - 本地大语言模型，正好会吃满在本地cuda和显存，用于文献的文本的分类功能，负责提供标签
 
 ## 文件结构
-这里的文件结构为运行之后的，在github原始版本是不会有outputs和papers文件夹，在运行一次相关添加等操作之后会自动生成，这里的结构为实例，为视频操作展示之后的文件结构，详见视频
+这里的文件结构为运行之后的，为了保证与演示视频一致，这里上传了演示视频操作后的数据库和分类，供参考和复现，相关文件夹在运行一次相关添加等操作之后会自动生成，这里的结构为实例，为视频操作展示之后的文件结构，详见视频
 - models：负责存放模型
 - outputs：存放输出
   - chroma_db：向量数据库
@@ -114,5 +117,23 @@
 ├─test_pdfs
 
 ```
+## 运行截图
+![运行结果图](results.png)
+包括已经测试的单个添加和扫描文件夹的操作，形成如下上的文件结构，其中两篇被分类为CV，另外两篇被分类为NLP
+outputs当中包含了向量数据库和拆解pdf后的每个文献对应包含的图片和文本
+
+搜索文章结果图
+![搜索文章结果图](result_search_paper.png)
+
+搜索文章和内容结果图
+![搜索文章和内容结果图](results_search_content.png)
+
+以文搜图结果图
+![以文搜图结果图](result_search_img.png)
+路径对应结果如下，共两张
+![results_search_img_img1.png](results_search_img_img1.png)
+![results_search_img_img2.png](results_search_img_img2.png)
+## 演示视频链接
+`https://drive.google.com/file/d/1K3qZ-inGlBO65LNwdV8FQTMBMPHsEMos/view?usp=sharing`
 
 
