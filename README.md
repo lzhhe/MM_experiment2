@@ -1,6 +1,7 @@
 # M502083B 多模态机器学习大作业
 - 25120399
 - 刘子赫
+- 项目链接 `https://github.com/lzhhe/MM_experiment2.git` 
 ## 项目简介与核心功能列表
 主要实现多模态的文献加入与查找功能，主要包括以下几个
 - 添加单个文献（可提供/不提供topic）
@@ -17,11 +18,25 @@
 - `pip install -r requirements.txt` 
 2. 请手动拉取需要的本地LLM大模型qwen3:4b
 - `ollama pull qwen3:4b`
-3. 请手动下载使用到的模型（github会有大小限制），放在models文件夹中
-- 链接为``
-- models文件夹结构如下
-
+3. 为了保证本地性，所有的权重都进行了预下载放在了项目目录下，但是由于github有大小限制（所有权重大小为884Mb左右，主要是ViT32b和Florence较大），请从谷歌云盘手动下载需要使用的模型，放在models文件夹中
+- 链接为`https://drive.google.com/file/d/1sOIJD3k_gvGeWSB3h3xHhf35aAVPpcDO/view?usp=sharing`
+- models文件夹结构如下：
+```
+├─models
+│  ├─all-MiniLM-L6-v2
+│  │  └─1_Pooling
+│  ├─clip
+│  └─Florence-2-base
+│      ├─.no_exist
+│      │  └─5ca5edf5bd017b9919c05d08aebef5e4c7ac3bac
+│      ├─blobs
+│      ├─refs
+│      └─snapshots
+│          └─5ca5edf5bd017b9919c05d08aebef5e4c7ac3bac
+```
 ## 详细的使用说明（包含具体的命令行示例）
+有演示视频可以观看：链接如下：
+`https://drive.google.com/file/d/1K3qZ-inGlBO65LNwdV8FQTMBMPHsEMos/view?usp=sharing`
 - 添加单个文献（可提供/不提供topic）
 - `python main.py add_paper <path> --topics "Topic1,Topic2"`
 - 例如 `python main.py add_paper "./test_pdfs/paper.pdf" --topics "CV,NLP"`
@@ -52,7 +67,7 @@
   - 用于将提取到的文献内图片转化为向量输入到chromaDB当中
 
 - Florence-2-base
-  - 用于图片内容识别和文本识别，主要是为了给图片添加图注，描述和提取图片内文字，便于支持文搜图功能
+  - 用于图片内容识别和OCR文本识别，主要是为了给图片添加图注，描述和提取图片内文字，便于支持文搜图功能
 
 - qwen3:4b
   - 本地大语言模型，正好会吃满在本地cuda和显存，用于文献的文本的分类功能，负责提供标签
@@ -65,8 +80,7 @@
   - pdf：存放pdf预处理后的元数据和图片
 - papers：按照领域分类存放处理过后的文献
 - test_pdfs：示例程序当中存放待处理论文的位置，可以改为其他的路径
-- video：存放示例视频
-
+示例文件结构（使用过各种功能后）：
 ```
 ├─models
 │  ├─all-MiniLM-L6-v2
@@ -97,7 +111,7 @@
 │  ├─CV
 │  └─NLP
 ├─test_pdfs
-├─video
+
 ```
 
 
