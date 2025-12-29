@@ -34,6 +34,7 @@
 │      └─snapshots
 │          └─5ca5edf5bd017b9919c05d08aebef5e4c7ac3bac
 ```
+- 需要手动创建一个models文件夹，然后将下载的压缩包解压到models当中，最终结构如上
 ## 详细的使用说明（包含具体的命令行示例）
 有演示视频可以观看：链接如下：
 `https://drive.google.com/file/d/1K3qZ-inGlBO65LNwdV8FQTMBMPHsEMos/view?usp=sharing`
